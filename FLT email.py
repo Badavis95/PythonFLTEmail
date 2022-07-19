@@ -7,8 +7,8 @@ import pyad.adquery
 import smtplib
 import re
 
-pyad.set_defaults(ldap_server="vsi-nj.vitshoppe.com", username="brian.davis", password="Password01")
-user = pyad.aduser.ADUser.from_cn("Service Desk")
+pyad.set_defaults(ldap_server="", username="", password="")
+user = pyad.aduser.ADUser.from_cn("")
 
 StoreLookUp = (input)
 
@@ -17,7 +17,7 @@ q = pyad.adquery.ADQuery(StoreLookUp)
 q.execute_query(
     attributes = ["name", "Manager"],
     where_clause = "objectClass = '*'",
-    base_dn = "OU=Stores-PC,DC=vsi.nj,DC-vitshoppe,DC=com)"
+    base_dn = "OU=,DC=,DC=,DC=)"
 )
 adStoreMail = []
 ManagerName = []
@@ -33,7 +33,7 @@ z = pyad.adquery.ADQuery(ManagerName)
 z.execute_query(
     attributes = ["name", "mail", "Manager"],
     where_clause = "objectClass = '*'",
-    base_dn = "OU=Seacaucus,OU=RemoteUsers,DC=vsi-nj,DC=vitshoppe,DC=com"
+    base_dn = "OU=,OU=,DC=,DC=,DC="
 )
 
 adDMData = []
@@ -52,12 +52,12 @@ type (conn)
 conn
 conn.ehlo()
 conn.starttls
-conn.login('sdteam@vitaminshoppe.com','password')
+conn.login('','')
 
 
 fromaddr = 'sdteam@vitaminshoppe.com'
 toaddr = recipients
-cc = ['Operators@vitaminshoppe.com, StoreSystems@vitaminshoppe.com , SalesAuditEmailGroup@vitaminshoppe.com, Guia.Aguas@vitaminshoppe.com']
+cc = ['']
 Escalation_Description = (str)
 
 Greeting = ("Greetings all \n , I hope all is well. I wanted to provide you with an update regarding " + adStoreData)
